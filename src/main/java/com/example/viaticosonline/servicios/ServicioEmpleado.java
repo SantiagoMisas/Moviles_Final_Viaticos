@@ -43,6 +43,17 @@ public class ServicioEmpleado implements ServicioBase{
     }
 
     @Override
+    public Empleado registrar(Empleado entidad) throws Exception {
+     try{
+         entidad=repositorioEmpleado.save(entidad);
+         return entidad;
+
+     } catch (Exception error){
+         throw new Exception(error.getMessage());
+     }
+    }
+
+    @Override
     public Object editar(Integer id, Object entidad) throws Exception {
         return null;
     }
